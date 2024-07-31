@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+       (async function fethData(){
+          const fetchDataThrowAPI =  await fetch("/contact");
+          const data = await fetchDataThrowAPI.json();
+          const branchName = await data.branch;
+          const contactName = await data.contact;
+          console.log("data is" , data);
+          console.log("data branch" , branchName);
+          const divTag = document.getElementById('printBranch');
+          divTag.innerHTML = branchName;
+          document.getElementById('printContact').innerHTML = contactName;
+       
+        })();
+       
+    </script>
+</head>
+
+<body>
+    <h1>Welcome to my World!</h1>
+    <div id="printBranch"></div>
+    <div id="printContact"></div>
+</body>
+</html>
