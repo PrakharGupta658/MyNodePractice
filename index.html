@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-
+// Always remember fetch methode return a promise!
        (async function fethData(){
           const fetchDataThrowAPI =  await fetch("/contact");
+          console.log("fetchDataThrowAPI", fetchDataThrowAPI);
           const data = await fetchDataThrowAPI.json();
           const branchName = await data.branch;
           const contactName = await data.contact;
